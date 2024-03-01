@@ -1,0 +1,156 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "month",
+              "elicitationRequired": true,
+              "type": "AMAZON.Month",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1654006531166.375095007439"
+              }
+            },
+            {
+              "name": "year",
+              "elicitationRequired": true,
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1654006531166.268568983488"
+              }
+            },
+            {
+              "name": "day",
+              "elicitationRequired": true,
+              "type": "AMAZON.Ordinal",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1606195499006.611428550122"
+              }
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "month",
+              "type": "AMAZON.Month"
+            },
+            {
+              "multipleValues": {
+                "enabled": false
+              },
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "day",
+              "type": "AMAZON.Ordinal"
+            }
+          ],
+          "name": "CaptureZodiacSignIntent",
+          "samples": [
+            "my month is {month}",
+            "my date is {day}",
+            "my year is {year}",
+            "my date of birth is {year} {day} {month}",
+            "my date of birth is {month} {day} {year}",
+            "my date of birth is {day} {year} {month}",
+            "my date of birth is {year} {month} {day}",
+            "my date of birth is {month} {year} {day}",
+            "my date of birth is {day} {month} {year}",
+            "{month} {year} {day}",
+            "{year} {month} {day}",
+            "{day} {year} {month}",
+            "{day} {month} {year}",
+            "{year} {day} {month}",
+            "{month} {day} {year}",
+            "can you tell me what is my sign {year} {month} {day}",
+            "can you tell me what is my sign {day} {year} {month}",
+            "can you tell me what is my sign {day} {month} {year}",
+            "what is my zodiac sign with {day} {month} {year}",
+            "what is my zodiac sign with {month} {year} {day}",
+            "{day} ",
+            "born in {month} {year} {day}",
+            "born in {year} {day} {month}",
+            "born in {day} {month} {year}",
+            "{year}",
+            "{month}",
+            "I was born on November Nineteen {year}",
+            "I was born on November {day} Ninteen Ninty Eight",
+            "I was born on {month} Nineteen Ninteen Ninty Eight",
+            "I was born on November Nineteen Ninteen Ninty Eight"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "get zodiacwithcsv project"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which month you were born"
+          }
+        ],
+        "id": "Elicit.Slot.1654006531166.375095007439"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which year you were born"
+          }
+        ],
+        "id": "Elicit.Slot.1654006531166.268568983488"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the day you were born"
+          }
+        ],
+        "id": "Elicit.Slot.1606195499006.611428550122"
+      }
+    ]
+  }
+}
